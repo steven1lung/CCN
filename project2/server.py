@@ -12,32 +12,35 @@ class Server(threading.Thread):
         self.id = serverID
         self.network = network
         self.data = producer_contents
-        self.lock = lock
+
 
     def run(self):
-        server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        server.bind((self.HOST, self.PORT))
-        server.listen(10)
+        print("asd")
+        # server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        # server.bind((self.HOST, self.PORT))
+        # server.listen(10)
 
-        while True:
-            conn, addr = server.accept()
-            packet = conn.recv(1024)
-            packet = json.loads(packet)
-            string = 'r' + str(self.id) + ' : ' + packet[2] + '\n'
-            self.lock.acquire()
-            output_file = open('output_data/output.txt','a')
-            output_file.write(string)
-            output_file.close()
-            self.lock.release()
+        # while True:
+        #     conn, addr = server.accept()
+        #     packet = conn.recv(1024)
+        #     packet = json.loads(packet)
+        #     string = 'r' + str(self.id) + ' : ' + packet[2] + '\n'
+        #     self.lock.acquire()
+        #     output_file = open('output_data/output.txt','a')
+        #     output_file.write(string)
+        #     output_file.close()
+        #     self.lock.release()
     
     # def start_network(self,run_start_time,frequency,content_num,route_num,interests):
+    #     while True:
+    #         #asdsad
 
     # def accept(self):
-
+    #     #asdasd
     # def interest_process(self):
-
+    #     #asdasd
     # def data_process(self):
-
+    #     #asdasd
     # def send_data(self):
     #     network_list = self.network[1][:]
     #     for i in self.data:
