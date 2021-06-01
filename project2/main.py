@@ -1,11 +1,12 @@
 from server import Server
+from network import NETWORK
 import json
 import threading
 
 def load_network():
     with open('input_data/network.json', 'r') as file:
         data = file.read()
-    return json.loads(data)['network']
+    return json.loads(data)
 
 def load_parameters():
     with open('input_data/peremiters.json') as file:
@@ -39,6 +40,7 @@ def main():
 
 
         time+=1
+
 
 
     #data_list = parse['input']
