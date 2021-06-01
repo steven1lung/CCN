@@ -50,9 +50,10 @@ def main():
         if(time%parameters['frequency']==0):
             for j in server_list:
                 j.start_network(time,parameters['frequency'],parameters['content_num'],j.id,interests)
-            
         time+=1
 
+    # for j in server_list:
+    #     j.start_network(time,parameters['frequency'],parameters['content_num'],j.id,interests)
 
 
     #data_list = parse['input']
