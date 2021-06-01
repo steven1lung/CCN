@@ -2,15 +2,16 @@ import threading
 import json
 import socket
 
-class Router(threading.Thread):
+class Server(threading.Thread):
 
-    def __init__(self, routerID, network, data, lock, HOST='127.0.0.1'):
+    #def __init__(self, routerID, network, data, lock, HOST='127.0.0.1'):
+    def __init__(self, serverID, sizes, producer_contents, run_start_time,network, HOST='127.0.0.1'):
         threading.Thread.__init__(self)
         self.HOST = HOST
-        self.PORT= 8000 + routerID
-        self.id = routerID
+        self.PORT= 8000 + serverID
+        self.id = serverID
         self.network = network
-        self.data = data
+        self.data = producer_contents
         self.lock = lock
 
     def run(self):

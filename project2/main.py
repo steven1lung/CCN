@@ -1,46 +1,56 @@
-from router import Router
+from server import Server
 import json
 import threading
 
+def load_network():
+    with open('input_data/network.json', 'r') as file:
+        data = file.read()
+    return json.loads(data)
+
+def load_parameters():
+    with open('input_data/peremiters.json') as file:
+        data=file.read()
+    return json.loads(data)
+
+def input_producer_contents():
+    with open('input_data/producer_contents.json') as file:
+        data=file.read()
+    return json.loads(data)
+
+def input_interests():
+    with open('input_data/interests.json') as file:
+        data=file.read()
+    return json.loads(data)
+
 def main():
     router_list = []
-    # read network
-    with open('network.json', 'r') as file:
-        data = file.read()
-    network = json.loads(data)
-    # print("finish read data")
+    
+    network = load_network() # read network
+    producer_contents= input_producer_contents() # read producer_contents
+    interests= input_interests() #read interests
+    parameters=load_parameters() #read parameters
+    
+    time=0
+    while True:
+        if(time>=parameters['run_time']) :
+            break
+        #code here
+        
 
-    # read producer_contents
-    with open('producer_contents.json') as file:
-        data=file.read()
-    producer_contents=json.loads(data)
-    # print(producer_contents['r0'])
 
-    #read interests
-    with open('interests.json') as file:
-        data=file.read()
-    interests=json.loads(data)
+        time+=1
 
-    #read parameters
-    with open('peremiters.json') as file:
-        data=file.read()
-    parameters=json.loads(data)
 
-    #network = parse['network']
     #data_list = parse['input']
-    #lock = threading.Lock()
-
-    # print("finish parse")
-
+    # lock = threading.Lock()
     # run network
-    #for i in range(len(network)):
-    #    router = Router(i, network[i], data_list[i], lock)
-    #    router.start()
-    #    router_list.append(router)
-    # print("finish i")
-    #for j in router_list:
-    #    j.send_data()
-    # print("finish j")
+    # for i in range(len(network)):
+    #     router = Router(i, network[i], data_list[i], lock)
+    #     router.start()
+    #     router_list.append(router)
+    # for j in router_list:
+    #     j.send_data()
+
 
 if __name__ == '__main__':
     main()
