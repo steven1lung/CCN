@@ -14,6 +14,7 @@ class Router(threading.Thread):
         self.lock = lock
 
     def run(self):
+        print('in run')
         server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         server.bind((self.HOST, self.PORT))
         server.listen(10)

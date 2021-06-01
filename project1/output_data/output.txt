@@ -1,0 +1,16 @@
+r1 : csie
+r1 : [1, 2, 'apple']Unreachable
+r2 : ncku
+r3 : banana
+r2 : [2, 1, 'cps']Unreachable
+r3 : rts
+r3 : [3, 0, 'gg']Unreachable
+r1 : qq
+r2 : ncku
+r1 : csie
+r1 : [1, 2, 'apple']Unreachable
+r2 : [2, 1, 'cps']Unreachable
+r3 : banana
+r3 : [3, 0, 'gg']Unreachable
+r3 : rts
+r1 : qq

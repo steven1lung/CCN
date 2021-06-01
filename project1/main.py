@@ -17,6 +17,7 @@ def main():
     # run network
     for i in range(len(network)):
         router = Router(i, network[i], data_list[i], lock)
+        print('go start')
         router.start()
         router_list.append(router)
 
