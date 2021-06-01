@@ -16,6 +16,15 @@ def main():
     producer_contents=json.loads(data)
     # print(producer_contents['r0'])
 
+    #read interests
+    with open('interests.json') as file:
+        data=file.read()
+    interests=json.loads(data)
+
+    #read parameters
+    with open('peremiters.json') as file:
+        data=file.read()
+    parameters=json.loads(data)
 
     #network = parse['network']
     #data_list = parse['input']
