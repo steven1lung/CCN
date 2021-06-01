@@ -6,7 +6,7 @@ class PS():
         ps_list = [] 
 
     def Creat_ps(self, route_num, content_num, producer_content):
-
+        self.ps_list.append(producer_content)
     
     def Get_ps(self):
         return self.ps_list
@@ -15,5 +15,5 @@ class PS():
         if(ps.count(content_name)!= 0 )
             return True
         else
-            return
+            return False
 
