@@ -33,10 +33,11 @@ def main():
 
  
     #serverID, sizes, producer_contents, run_start_time,network, HOST='127.0.0.1'
+    
     for i in range(len(network)):
-        server=Server(i,parameters['queue_size'] ,producer_contents ,0,network,)
-        server.start()
-        server_list.append(server)
+            server=Server(i,parameters['queue_size'] ,producer_contents ,0,network)
+            server.start()
+            server_list.append(server)
 
     time=0
     while True:
@@ -45,6 +46,8 @@ def main():
         #code here
         
 
+        
+            
 
         time+=1
 
