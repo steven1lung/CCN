@@ -45,10 +45,6 @@ def main():
             break
         #code here
         
-
-        
-            
-
         time+=1
 
 
