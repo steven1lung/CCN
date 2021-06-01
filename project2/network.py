@@ -2,10 +2,10 @@ import json
 
 class NETWORK():
     def __init__(self):
-        self.network=[]
+        self.network = []
 
     def Create_network(self,network):
-        self.network=network
+        self.network = network
         return self.network
 
     def Get_network(self):

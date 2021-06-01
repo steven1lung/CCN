@@ -27,26 +27,26 @@ def main():
     server_list = []
     
     network = load_network() # read network
-    producer_contents= input_producer_contents() # read producer_contents
-    interests= input_interests() #read interests
-    parameters=load_parameters() #read parameters
+    producer_contents = input_producer_contents() # read producer_contents
+    interests = input_interests() #read interests
+    parameters = load_parameters() #read parameters
 
  
     #serverID, sizes, producer_contents, run_start_time,network, HOST='127.0.0.1'
     for i in range(len(network)):
-        server=Server(i,parameters['queue_size'] ,producer_contents ,0,network,)
+        server = Server(i, parameters['queue_size'], producer_contents, 0, network,)
         server.start()
         server_list.append(server)
 
     time=0
     while True:
-        if(time>=parameters['run_time']) :
+        if(time >= parameters['run_time']) :
             break
         #code here
         
 
 
-        time+=1
+        time += 1
 
 
 
