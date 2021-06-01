@@ -5,7 +5,7 @@ import threading
 def load_network():
     with open('input_data/network.json', 'r') as file:
         data = file.read()
-    return json.loads(data)
+    return json.loads(data)['network']
 
 def load_parameters():
     with open('input_data/peremiters.json') as file:

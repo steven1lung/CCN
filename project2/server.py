@@ -29,18 +29,26 @@ class Server(threading.Thread):
             output_file.write(string)
             output_file.close()
             self.lock.release()
+    
+    # def start_network(self,run_start_time,frequency,content_num,route_num,interests):
 
-    def send_data(self):
-        network_list = self.network[1][:]
-        for i in self.data:
-            if i[1] in network_list:
-                send_data = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                send_data.connect((self.HOST, 8000 + i[1]))
-                send_data.sendall(bytes(json.dumps(i), encoding='utf-8'))
-            else:
-                string = 'r' + str(self.id) + ' : ' + str(i) + "Unreachable\n"
-                self.lock.acquire()
-                output_file = open('output_data/output.txt','a')
-                output_file.write(string)
-                output_file.close()
-                self.lock.release()
+    # def accept(self):
+
+    # def interest_process(self):
+
+    # def data_process(self):
+
+    # def send_data(self):
+    #     network_list = self.network[1][:]
+    #     for i in self.data:
+    #         if i[1] in network_list:
+    #             send_data = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    #             send_data.connect((self.HOST, 8000 + i[1]))
+    #             send_data.sendall(bytes(json.dumps(i), encoding='utf-8'))
+    #         else:
+    #             string = 'r' + str(self.id) + ' : ' + str(i) + "Unreachable\n"
+    #             self.lock.acquire()
+    #             output_file = open('output_data/output.txt','a')
+    #             output_file.write(string)
+    #             output_file.close()
+    #             self.lock.release()
